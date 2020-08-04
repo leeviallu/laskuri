@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="laskuri.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+
+      <!--laskurin alustus-->
+        <div id=app>
+          <div class="flexcontainer">
+            <input class="addrider item" v-model="newRiderName" v-on:keyup.enter="addRider">
+            <input class="addrider item" v-model="newRiderNumber" v-on:keyup.enter="addRider">
+            <button class="addrider item" @click="addRider">
+              Lissee osallistuja
+            </button>
+          </div>
+          <!--taulukko-->
+          <div class="flexcontainer">
+            <div class="sheet item">
+              <li v-for="rider in riders">
+                {{rider.name}} #{{rider.number}} : {{rider.laps.length}}
+              </li>
+            </div>
+
+        <!--laskuri-->
+          <div class="item">
+            <button v-for="rider in sortedRiders" @click="addLap(rider.number)">
+              {{rider.number}}
+            </button>
+          </div>
+
+          <button class="item" v-on:click="startRace">
+            Pistä kisa käyntii
+          </button>
+        </div>
+      </div>
+        <!--linkki javascriptiin-->
+      <script src="laskuri.js"></script>
+
+    </body>
+</html>
