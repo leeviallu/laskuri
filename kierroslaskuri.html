@@ -8,10 +8,10 @@
       <!--laskurin alustus-->
         <div id=app>
           <div class="flexcontainer">
-            <button class="item topbar" v-on:click="startRace">
+            <button class="halfitem topbar" v-on:click="startRace">
               <h2>Start</h2>
             </button>
-            <div class="item topbar">
+            <div class="halfitem topbar">
               <p>Race OFF</p>
               <p>00.00.00</p>
             </div>
@@ -19,26 +19,24 @@
 
             <!--taulukko-->
           <div class="flexcontainer">
-            <div class="sheet">
-              <div>
-              RACERS
-              </div>
-              <div v-for="rider in riders">
+            <div class="halfitem sheet">
+              <p class="racerstats-header">RACERS:</p>
+              <div class="racerstats" v-for="rider in riders">
                 {{rider.lastname}} #{{rider.number}} : {{rider.laps.length}} / 5
               </div>
             </div>
 
-            <div class="addrider-container">
-              <input class="addrider item" placeholder="Number" v-model="newRiderNumber" v-on:keyup.enter="addRider">
-              <input class="addrider item" placeholder="Firstname" v-model="newRiderFirstName" v-on:keyup.enter="addRider">
-              <input class="addrider item" placeholder="Lastname" v-model="newRiderLastName" v-on:keyup.enter="addRider">
-
-              <button class="addrider item" @click="addRider">
-                + ADD
-              </button>
+            <div class="halfitem addrider-container">
+              <input class="addrider fullitem" placeholder="Number" v-model="newRiderNumber" v-on:keyup.enter="addRider">
+              <input class="addrider fullitem" placeholder="Firstname" v-model="newRiderFirstName" v-on:keyup.enter="addRider">
+              <input class="addrider fullitem" placeholder="Lastname" v-model="newRiderLastName" v-on:keyup.enter="addRider">
             </div>
           </div>
-
+          <div class="flexcontainer">
+          <button class="addrider fullitem" @click="addRider">
+            + ADD
+          </button>
+          </div>
 
 
         <!--laskuri-->

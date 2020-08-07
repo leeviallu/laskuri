@@ -8,24 +8,25 @@
   border-width: 2px;
   height: 60px;
 }
+.topbar{
+  border-style: solid;
+}
 button.addrider{
   background-color: grey;
   color: white;
 }
-.addrider-container {
-  flex-grow: 1;
+.racerstats-header{
+  font-weight: bold;
+  padding: 20px;
 }
 .sheet{
-  margin: 1px;
-  border-width: 1px;
-  border-radius: 1px;
+  border-width: 0.5px;
   border-style: solid;
   border-color: red;
   font-size: 12px;
-  flex-grow: 1;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .flexcontainer{
   display: flex;
@@ -33,6 +34,9 @@ button.addrider{
   flex-wrap: nowrap;
   justify-content: space-around;
 }
-.item{
-  flex-grow: 1;
+.halfitem{
+  width: 50%;
+}
+.fullitem{
+  width: 100%;
 }
